@@ -28,7 +28,7 @@ Output from the UPP is in National Weather Service (NWS) and World
 Meteorological Organization (WMO) GRIB2 format and can be used
 directly by visualization, plotting, or verification packages, or for
 further downstream post-processing, e.g. statistical post-processing
-techniques
+techniques.
 
 Examples of UPP products include:
 
