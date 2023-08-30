@@ -57,11 +57,11 @@ pipeline {
         cleanWs()
         checkout scm
         sh '''
-        // git submodule update --init --recursive
-        // ln -fs /scratch2/NAGAPE/epic/UFS_Land-DA/inputs /scratch1/NCEPDEV/stmp2/role.epic/jenkins/workspace/
         echo $(pwd)
-        cp /scratch1/NCEPDEV/nems/Fernando.Andrade-maldonado/scripts/rt-rework.sh .
-        ./rt-rework.sh -a ${ACCNR} -h ../test_suite -r `pwd`/rundir -b ${git-branch} -u ${git-url}
+        cd ci/
+        cp /scratch1/NCEPDEV/nems/Fernando.Andrade-maldonado/scripts/rt.sh .
+        ./rt.sh -a ${ACCNR} -h ../test_suite -r `pwd`/rundir -t ../
+        python ./ci/rt-status.py
         '''
       }
     }        
@@ -79,8 +79,10 @@ pipeline {
         checkout scm
         sh '''
         echo $(pwd)
+        cd ci/
         cp /work/noaa/epic-ps/nandoam/scripts/rt.sh .
-        ./rt-rework.sh -a ${ACCNR} -h ../test_suite -r `pwd`/rundir -b ${git-branch} -u ${git-url}
+        ./rt.sh -a ${ACCNR} -h ../../ -r `pwd`/rundir -t ../
+        python ./ci/rt-status.py
         '''
       }
     }    
@@ -98,8 +100,10 @@ pipeline {
         checkout scm
         sh '''
         echo $(pwd)
+        cd ci/
         cp /work/noaa/epic-ps/nandoam/scripts/rt.sh .
-        ./rt-rework.sh -a ${ACCNR} -h ../test_suite -r `pwd`/rundir -b ${git-branch} -u ${git-url}
+        ./rt.sh -a ${ACCNR} -h ../../ -r `pwd`/rundir -t ../
+        python ./ci/rt-status.py
         ''' 
         }
     } 
