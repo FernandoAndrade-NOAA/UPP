@@ -61,7 +61,7 @@ pipeline {
         cd ci/
         cp /scratch1/NCEPDEV/nems/Fernando.Andrade-maldonado/scripts/rt.sh .
         ./rt.sh -a ${ACCNR} -h ../test_suite -r `pwd`/rundir -t ../
-        python ./ci/rt-status.py
+        python ./rt-status.py
         '''
       }
     }        
@@ -82,7 +82,7 @@ pipeline {
         cd ci/
         cp /work/noaa/epic-ps/nandoam/scripts/rt.sh .
         ./rt.sh -a ${ACCNR} -h ../../ -r `pwd`/rundir -t ../
-        python ./ci/rt-status.py
+        python ./rt-status.py
         '''
       }
     }    
@@ -103,7 +103,7 @@ pipeline {
         cd ci/
         cp /work/noaa/epic-ps/nandoam/scripts/rt.sh .
         ./rt.sh -a ${ACCNR} -h ../../ -r `pwd`/rundir -t ../
-        python ./ci/rt-status.py
+        python ./rt-status.py
         ''' 
         }
     } 
