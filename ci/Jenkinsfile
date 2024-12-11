@@ -64,8 +64,9 @@ def generateStage(nodeLabel) {
                           then
                            echo "Running regression tests on $machine"
                              export ACCNR=epic
+			     cd ci/
                              ./rt.sh -a ${ACCNR} | tee $WORKSPACE/tests/logs/RT-run-$machine.log
-			     cd logs/
+			     cd ../tests/logs
 			     cp rt.log.HERA /scratch2/NAGAPE/epic/role.epic/jenkins/workspace
 			     git remote -v
                              git fetch --no-recurse-submodules origin
