@@ -36,7 +36,7 @@ def generateStage(nodeLabel) {
                             sed "s|/noaa/stmp/|/noaa/$ACCNR/stmp/|g" -i rt.sh
                             export ACCNR=epic
                             ./rt.sh -a ${ACCNR} | tee $WORKSPACE/tests/logs/RT-run-$machine.log
-                            cd cd $WORKSPACE/tests/logs/
+                            cd $WORKSPACE/tests/logs/
                             cp rt.log.HERCULES /work/noaa/epic/role-epic/jenkins/workspace
                             git remote -v
                             git fetch --no-recurse-submodules origin
@@ -51,7 +51,7 @@ def generateStage(nodeLabel) {
 			    cd $WORKSPACE/ci
                             sed "s|/noaa/stmp/|/noaa/$ACCNR/stmp/|g" -i rt.sh
                             ./rt.sh -a ${ACCNR} | tee $WORKSPACE/tests/logs/RT-run-$machine.log
-                             cd cd $WORKSPACE/tests/logs/
+                             cd $WORKSPACE/tests/logs/
                              cp rt.log.ORION /work/noaa/epic/role-epic/jenkins/workspace
                              git remote -v
                              git fetch --no-recurse-submodules origin
